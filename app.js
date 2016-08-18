@@ -31,7 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //验证微信token
-validateWeixinToken(app);
+//validateWeixinToken(app);
 
 app.use('/', routes);
 app.use('/users', users);
@@ -43,7 +43,7 @@ var config = {
   encodingAESKey: 'FGS8kxzKdzST4GR2NSqNPjUTXIX3gdfRirBjFCQ1zoC'
 };
 app.use(express.query());
-app.use('/wechat', wechat(config, function (req, res, next) {
+app.use('/', wechat(config, function (req, res, next) {
   // 微信输入信息都在req.weixin上
   var message = req.weixin;
   if (message.FromUserName === 'diaosi') {
