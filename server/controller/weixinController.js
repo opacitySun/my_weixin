@@ -26,10 +26,11 @@ exports.validateToken = function(app) {
           return str;
         }
 
-        var signature = req.body.signature;
-        var timestamp = req.body.timestamp;
-        var nonce = req.body.nonce;  
-        var echostr = req.body.echostr;  
+        var query = url.parse(req.url,true).query;
+        var signature = query.signature;
+        var timestamp = query["timestamp"];
+        var nonce = query.nonce;  
+        var echostr = query.echostr;  
                     
         var token = "sunxxjjs8ceow90xc92";
         var tmpArr = [token, timestamp, nonce];
