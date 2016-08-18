@@ -40,8 +40,9 @@ app.use('/users', users);
 var config = {
   token: 'sunxxjjs8ceow90xc92',
   appid: 'wx69a406a1b3ddb9f4',
-  encodingAESKey: 'MGbGm99vXrwVLGkoz5mx9MDARoziQ7XIgIv2ZerJcpp'
+  encodingAESKey: 'FGS8kxzKdzST4GR2NSqNPjUTXIX3gdfRirBjFCQ1zoC'
 };
+app.use(express.query());
 app.use('/wechat', wechat(config, function (req, res, next) {
   // 微信输入信息都在req.weixin上
   var message = req.weixin;
