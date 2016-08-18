@@ -14,7 +14,7 @@ exports.outerConnectAction = function(app){
 }
 
 /**  
- * get User  
+ * 验证token 
  * @returns {Function}  
  */  
 exports.validateToken = function(app) {   
